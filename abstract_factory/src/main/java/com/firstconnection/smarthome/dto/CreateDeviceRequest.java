@@ -1,6 +1,6 @@
-package com.firstconnection.original.smarthome.dto;
+package com.firstconnection.smarthome.dto;
 
-import com.firstconnection.original.smarthome.entity.DeviceType;
+import com.firstconnection.abstract_factory.smarthome.entity.DeviceType;
 import java.util.Map;
 
 public class CreateDeviceRequest {

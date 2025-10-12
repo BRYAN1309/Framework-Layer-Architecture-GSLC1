@@ -10,25 +10,20 @@ import java.util.List;
 
 @Service
 public class DeviceService {
-    private final DeviceRepository repository;
 
-    public DeviceService(DeviceRepository repository) {
-        this.repository = repository;
+    private final DeviceRepository deviceRepository;
+
+    public DeviceService(DeviceRepository deviceRepository) {
+        this.deviceRepository = deviceRepository;
     }
 
-    public Device createLight(String location) {
-        SmartDeviceDirector director = new SmartDeviceDirector(new DeviceBuilder());
-        Device light = director.constructBasicLight(location);
-        return repository.save(light);
-    }
-
-    public Device createAirConditioner(String location) {
-        SmartDeviceDirector director = new SmartDeviceDirector(new DeviceBuilder());
-        Device ac = director.constructAirConditioner(location);
-        return repository.save(ac);
+    public Device createDevice(CreateDeviceRequest request) {
+        // Gunakan factory untuk membuat instance Device
+        Device device = DeviceFactory.createDevice(request.getName(), request.getType());
+        return deviceRepository.save(device);
     }
 
     public List<Device> getAllDevices() {
-        return repository.findAll();
+        return deviceRepository.findAll();
     }
 }

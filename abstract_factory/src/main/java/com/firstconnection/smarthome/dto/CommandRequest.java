@@ -1,4 +1,4 @@
-package com.firstconnection.original.smarthome.dto;
+package com.firstconnection.smarthome.dto;
 
 import java.util.Map;
 

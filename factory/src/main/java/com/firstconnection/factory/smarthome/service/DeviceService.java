@@ -18,6 +18,7 @@ public class DeviceService {
     }
 
     public Device createDevice(CreateDeviceRequest request) {
+        // Gunakan factory untuk membuat instance Device
         Device device = DeviceFactory.createDevice(request.getName(), request.getType());
         return deviceRepository.save(device);
     }

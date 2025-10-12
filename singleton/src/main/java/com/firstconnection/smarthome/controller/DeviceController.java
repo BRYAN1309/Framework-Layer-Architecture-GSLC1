@@ -1,6 +1,6 @@
-package com.firstconnection.original.smarthome.controller;
+package com.firstconnection.smarthome.controller;
 
-import com.firstconnection.original.smarthome.dto.*;
+import com.firstconnection.singleton.smarthome.dto.*;
 import com.firstconnection.original.smarthome.repository.DeviceRepository;
 import com.firstconnection.original.smarthome.service.DeviceServiceSingleton;
 import org.springframework.http.ResponseEntity;
