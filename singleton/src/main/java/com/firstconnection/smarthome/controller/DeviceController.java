@@ -1,7 +1,8 @@
 package com.firstconnection.original.smarthome.controller;
 
 import com.firstconnection.original.smarthome.dto.*;
-import com.firstconnection.original.smarthome.service.DeviceService;
+import com.firstconnection.original.smarthome.repository.DeviceRepository;
+import com.firstconnection.original.smarthome.service.DeviceServiceSingleton;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,10 +12,10 @@ import java.util.List;
 @RequestMapping("/api/devices")
 public class DeviceController {
 
-    private final DeviceService service;
+    private final DeviceServiceSingleton service;
 
-    public DeviceController(DeviceService service) {
-        this.service = service;
+    public DeviceController(DeviceRepository repo) {
+        this.service = DeviceServiceSingleton.getInstance(repo);
     }
 
     @PostMapping
